@@ -7,6 +7,7 @@ main(List<String> args) async {
 
   final app = unpub.App(
     metaStore: unpub.MongoStore(db),
+    overrideUploaderEmail: "jiodg45@163.com",
     packageStore: unpub.FileStore('./unpub-packages'),
   );
 
