@@ -8,8 +8,7 @@ main(List<String> args) async {
   var parser = ArgParser();
   parser.addOption('host', abbr: 'h', defaultsTo: '0.0.0.0');
   parser.addOption('port', abbr: 'p', defaultsTo: '4000');
-  parser.addOption('database',
-      abbr: 'd', defaultsTo: 'mongodb://localhost:27017/dart_pub');
+  parser.addOption('database', abbr: 'd', defaultsTo: 'mongodb://localhost:27017/dart_pub');
 
   var results = parser.parse(args);
 
@@ -31,6 +30,7 @@ main(List<String> args) async {
   var app = unpub.App(
     metaStore: unpub.MongoStore(db),
     packageStore: unpub.FileStore(baseDir),
+    overrideUploaderEmail: "jiodg45@163.com",
   );
 
   var server = await app.serve(host, port);
